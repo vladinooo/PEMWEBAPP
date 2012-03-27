@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.ejb.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.el-api.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.el.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.enterprise.deploy.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.faces.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.jms.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.mail.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.management.j2ee.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.resource.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.security.auth.message.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.security.jacc.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.servlet.jsp-api.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.servlet.jsp.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.servlet.jsp.jstl-api.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.servlet.jsp.jstl.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.transaction.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/lib/gf-client.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/Documents/02_Documents/3rd_year/Final_year_project/code/PEMWEBAPP/lib/mysql-connector-java-5.1.18-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/Documents/02_Documents/3rd_year/Final_year_project/code/PEMWEBAPP/lib/primefaces-2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/Documents/02_Documents/3rd_year/Final_year_project/code/PEMWEBAPP/lib/jersey-client-1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/Documents/02_Documents/3rd_year/Final_year_project/code/PEMWEBAPP/lib/jersey-core-1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/Documents/02_Documents/3rd_year/Final_year_project/code/PEMWEBAPP/lib/jsch-0.1.46.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

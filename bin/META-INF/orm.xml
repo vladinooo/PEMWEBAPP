@@ -1,0 +1,15 @@
+<entity-mappings
+	xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.1">
+	
+
+	<entity class="pem.pemwebapp.domain.Profile">
+		<named-query name="getProfile">
+			<query>
+				SELECT profile FROM Profile profile
+			</query>
+		</named-query>
+	</entity>
+	
+</entity-mappings>
