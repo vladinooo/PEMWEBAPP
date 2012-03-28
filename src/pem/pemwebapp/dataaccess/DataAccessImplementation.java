@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import pem.pemwebapp.domain.Profile;
+import pem.pemwebapp.domain.Session;
 
 @Stateless
 public class DataAccessImplementation implements DataAccess {
@@ -30,5 +31,22 @@ public class DataAccessImplementation implements DataAccess {
 		Profile profileToRemove = em.find(Profile.class, profile.getId());
 		em.remove(profileToRemove);
 	}
+	
+	// for test only
+	public void createSession(Session session) {
+		em.persist(session);
+	}
+	
+	public List<Session> listSessions() {
+		Query q = em.createNamedQuery("listSessions");
+		List<Session> results = q.getResultList();
+		return results;
+	}
+	
+	public void deleteSession(Session session) {
+		Session sessionToRemove = em.find(Session.class, session.getId());
+		em.remove(sessionToRemove);
+	}
+
 
 }

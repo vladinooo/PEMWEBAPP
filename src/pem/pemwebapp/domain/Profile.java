@@ -16,8 +16,6 @@ public class Profile implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	@Temporal(TemporalType.DATE)
-	private Date date;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -31,7 +29,6 @@ public class Profile implements Serializable {
 	
 	public Profile(String firstName, String lastName, String email, String password, String bodyWeight) {
 		
-		date = new Date();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -41,14 +38,6 @@ public class Profile implements Serializable {
 	
 	public int getId() {
 		return id;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
 	}
 
 	public String getFirstName() {

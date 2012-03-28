@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Personal Energy Meter - Session Details</title>
+	  	
+	  	<link href="style.css" rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><h:outputLink value="profile.jsf">Profile</h:outputLink></li>
+		        <li><h:outputLink value="sessions.jsf">Sessions</h:outputLink></li>
+		        <li><h:outputLink value="logout.jsf">Logout</h:outputLink></li>		        
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Session Details</h3>
+	  		<br />
+			
+			<div id="tableBorder">
+		  		<table width="100%">
+					<tr>
+						<td class="tableHead" width="110"><p>Date:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.date}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="110"><p>Session name:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.sessionName}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="110"><p>Mode of transport:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.modeOfTransport}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="110"><p>Burned Calories:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.caloriesBurned}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="110"><p>Distance:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.distance}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="110"><p>Time:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.time}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="110"><p>Speed:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.speed}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="110"><p>Co2 Emission:</p></td>
+						<td><p><h:outputText value="#{sessionDetails.session.cO2Emission}"/></p></td>
+					</tr>
+				
+				</table>
+			</div>
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>

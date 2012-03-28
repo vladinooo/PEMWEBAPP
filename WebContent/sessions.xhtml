@@ -10,6 +10,7 @@
 	  	
 	  </h:head>
 	  
+	  
 	  <h:body>
 	  
 	  <center>
@@ -19,32 +20,21 @@
 	  		
 		  	<div id="NavHorMenu">
 		       <ul>
-		        <li><h:outputLink value="statement.jsf">Statement</h:outputLink></li>
-		        <li><h:outputLink value="buy.jsf">Buy</h:outputLink></li>
-		        <li><h:outputLink value="sell.jsf">Sell</h:outputLink></li>
-		        <li><h:outputLink value="pastorders.jsf">Past Orders</h:outputLink></li>
+		        <li><h:outputLink value="profile.jsf">Profile</h:outputLink></li>
+		        <li><h:outputLink value="sessions.jsf">Sessions</h:outputLink></li>
+		        <li><h:outputLink value="logout.jsf">Logout</h:outputLink></li>		        
 		       </ul>
 		     </div>
 		     
 		     <br />
 		     
-		    <h3>Past Orders</h3>
+		    <h3>Sessions</h3>
 	  		<br />
-				
-	  		<div id="tableBorder">
-	  		<table width="100%">
-	  			<tr>
-	  				<td align="left"><p>List by company: 
-	  					<h:selectOneMenu value="#{pastOrders.shareCompany}">
-		            		<f:selectItems value="#{pastOrders.options}" />
-		       				</h:selectOneMenu>
-	       				<h:commandButton value="Select" action="#{pastOrders.getShareTransactionsByCompany()}"/>
-	       				<i style="font-size: 12px; font-style: italic;"> (-- for all)</i></p>
-	  				</td>
-	  			</tr>
-	  		</table>
-		  		<h:dataTable value="#{pastOrders.shareTransactions}"
-		  		var="_shareTransaction"
+			
+			<div id="tableBorder">
+	  		
+		  		<h:dataTable value="#{sessions.sessionList}"
+		  		var="_session"
 		  		styleClass="dataTable"
     			headerClass="dataTable-header"
     			rowClasses="order-table-odd-row,dataTable-even-row"
@@ -54,47 +44,32 @@
 	 
 	    			<h:column>
 	    				<f:facet name="header">Date</f:facet>
-	    				#{_shareTransaction.dateFormatted}
+	    				#{_session.date}
 	    			</h:column>
 	 
 	    			<h:column>
-	    				<f:facet name="header">Company</f:facet>
-	    				#{_shareTransaction.company}
-	    			</h:column>
-	    			
-	    			<h:column style="width: 200; colour: #fff;">
-	    				<f:facet name="header">Share Unit Price</f:facet>
-	    				<p>&#36; #{_shareTransaction.unitPrice}</p>
-	    			</h:column>
-	 
-	    			<h:column>
-	    				<f:facet name="header">Amount</f:facet>
-	    				#{_shareTransaction.sharesAmount}
+	    				<f:facet name="header">Session</f:facet>
+	    				#{_session.sessionName}
 	    			</h:column>
 	    			
 	    			<h:column>
-	    				<f:facet name="header">Value</f:facet>
-	    				<p>&#36; #{_shareTransaction.sharesValue}</p>
+	    				<f:facet name="header">Burned Calories</f:facet>
+	    				<p>#{_session.caloriesBurned}</p>
 	    			</h:column>
 	    			
 	    			<h:column>
- 						<f:facet name="header">Action</f:facet>
-	 						<h:commandLink value="Delete" action="#{pastOrders._deleteShareTransaction(_shareTransaction)}" />
+ 						<f:facet name="header">Details</f:facet>
+	 						<h:commandButton value="Details" action="#{sessionDetails.showDetails(_session)}" />
+	    			</h:column>
+	    			
+	    			<h:column>
+ 						<f:facet name="header">Delete</f:facet>
+	 						<h:commandButton value="Delete" action="#{sessions.__deleteSession(_session)}" />
 	    			</h:column>
 	    			
 	    		</h:dataTable>
   	
 			</div>
-			
-			<div id="pastOrdersFooter">
-	  			<table width="100%" style="background-color: #fff">
-	  				<tr>
-	  					<td>
-	  						<p style="font-style: italic; text-align: right;">( - indicates a sale transaction)</p>
-	  					</td>
-	  				</tr>
-	    		</table>
-    		</div>
 	  	
 	  	</h:form>
 	  	

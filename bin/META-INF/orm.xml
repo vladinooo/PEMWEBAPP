@@ -12,4 +12,13 @@
 		</named-query>
 	</entity>
 	
+	<entity class="pem.pemwebapp.domain.Session">
+		<named-query name="listSessions">
+			<query>
+				SELECT session FROM Session session
+				ORDER BY session.date ASC
+			</query>
+		</named-query>
+	</entity>
+	
 </entity-mappings>

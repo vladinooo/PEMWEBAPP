@@ -16,41 +16,42 @@ public class Session implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	@Temporal(TemporalType.DATE)
-	private Date date;
+	private String date;
 	private String sessionName;
+	private String modeOfTransport;
 	private String caloriesBurned;
 	private String distance;
 	private String time;
 	private String speed;
-	private String cO2Emissions;
+	private String cO2Emission;
 
 	
 	public Session() { 
 		// for JPA use only }
 	}
 	
-	public Session(String sessionName, String caloriesBurned,
-			String distance, String time, String speed, String cO2Emissions) {
+	public Session(String date, String sessionName, String modeOfTransport, String caloriesBurned,
+			String distance, String time, String speed, String cO2Emission) {
 		
-		date = new Date();
+		this.date = date;
 		this.sessionName = sessionName;
+		this.modeOfTransport = modeOfTransport;
 		this.caloriesBurned = caloriesBurned;
 		this.distance = distance;
 		this.time = time;
 		this.speed = speed;
-		this.cO2Emissions= cO2Emissions;
+		this.cO2Emission = cO2Emission;
 	}
 
 	public int getId() {
 		return id;
 	}
 	
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -60,6 +61,14 @@ public class Session implements Serializable {
 
 	public void setSessionName(String sessionName) {
 		this.sessionName = sessionName;
+	}
+
+	public String getModeOfTransport() {
+		return modeOfTransport;
+	}
+
+	public void setModeOfTransport(String modeOfTransport) {
+		this.modeOfTransport = modeOfTransport;
 	}
 
 	public String getCaloriesBurned() {
@@ -94,12 +103,12 @@ public class Session implements Serializable {
 		this.speed = speed;
 	}
 
-	public String getcO2Emissions() {
-		return cO2Emissions;
+	public String getcO2Emission() {
+		return cO2Emission;
 	}
 
-	public void setcO2Emissions(String cO2Emissions) {
-		this.cO2Emissions = cO2Emissions;
+	public void setcO2Emission(String cO2Emission) {
+		this.cO2Emission = cO2Emission;
 	}
 	
 	
