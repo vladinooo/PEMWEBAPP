@@ -6,20 +6,59 @@
 	  <h:head>
 	  	<title>Personal Energy Meter - Online Profile</title>
 	  	
-	  	<link href="../style.css" rel="stylesheet" type="text/css" />
+	  	<link href="style.css" rel="stylesheet" type="text/css" />
 	  	
 	  </h:head>
+	  
 	  
 	  <h:body>
 	  
 	  <center>
 	  
 	  	<h:form>
-	  	
-
-			<h:commandButton value="Create Profile" action="#{profile.createProfile}"/>
+	  		<br /><br />
 	  		
-	 
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><h:outputLink value="profile.jsf">Profile</h:outputLink></li>
+		        <li><h:outputLink value="sessions.jsf">Sessions</h:outputLink></li>
+		        <li><h:outputLink value="logout.jsf">Logout</h:outputLink></li>		        
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Profile</h3>
+	  		<br />
+			
+			<div id="tableBorder">
+		  		<table width="100%">
+					<tr>
+						<td class="tableHead" colspan="2"><p>Personal Info:</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>First name:</p></td> <td><p>Vlad</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Last name:</p></td> <td><p>Hartmann</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Email:</p></td> <td><p>artmannv@yahoo.co.uk</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Gender:</p></td> <td><p>Male</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Age:</p></td> <td><p>30</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Body weight:</p></td> <td><p>145 lb</p></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right" class="tableFooter"></td>
+					</tr>
+				</table>
+			</div>
 	  	
 	  	</h:form>
 	  	

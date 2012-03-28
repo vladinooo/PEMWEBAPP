@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Personal Energy Meter - Sessions</title>
+	  	
+	  	<link href="style.css" rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><h:outputLink value="statement.jsf">Statement</h:outputLink></li>
+		        <li><h:outputLink value="buy.jsf">Buy</h:outputLink></li>
+		        <li><h:outputLink value="sell.jsf">Sell</h:outputLink></li>
+		        <li><h:outputLink value="pastorders.jsf">Past Orders</h:outputLink></li>
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Past Orders</h3>
+	  		<br />
+				
+	  		<div id="tableBorder">
+	  		<table width="100%">
+	  			<tr>
+	  				<td align="left"><p>List by company: 
+	  					<h:selectOneMenu value="#{pastOrders.shareCompany}">
+		            		<f:selectItems value="#{pastOrders.options}" />
+		       				</h:selectOneMenu>
+	       				<h:commandButton value="Select" action="#{pastOrders.getShareTransactionsByCompany()}"/>
+	       				<i style="font-size: 12px; font-style: italic;"> (-- for all)</i></p>
+	  				</td>
+	  			</tr>
+	  		</table>
+		  		<h:dataTable value="#{pastOrders.shareTransactions}"
+		  		var="_shareTransaction"
+		  		styleClass="dataTable"
+    			headerClass="dataTable-header"
+    			rowClasses="order-table-odd-row,dataTable-even-row"
+    			cellspacing="0"
+    			cellpadding="0"
+    			border="0">
+	 
+	    			<h:column>
+	    				<f:facet name="header">Date</f:facet>
+	    				#{_shareTransaction.dateFormatted}
+	    			</h:column>
+	 
+	    			<h:column>
+	    				<f:facet name="header">Company</f:facet>
+	    				#{_shareTransaction.company}
+	    			</h:column>
+	    			
+	    			<h:column style="width: 200; colour: #fff;">
+	    				<f:facet name="header">Share Unit Price</f:facet>
+	    				<p>&#36; #{_shareTransaction.unitPrice}</p>
+	    			</h:column>
+	 
+	    			<h:column>
+	    				<f:facet name="header">Amount</f:facet>
+	    				#{_shareTransaction.sharesAmount}
+	    			</h:column>
+	    			
+	    			<h:column>
+	    				<f:facet name="header">Value</f:facet>
+	    				<p>&#36; #{_shareTransaction.sharesValue}</p>
+	    			</h:column>
+	    			
+	    			<h:column>
+ 						<f:facet name="header">Action</f:facet>
+	 						<h:commandLink value="Delete" action="#{pastOrders._deleteShareTransaction(_shareTransaction)}" />
+	    			</h:column>
+	    			
+	    		</h:dataTable>
+  	
+			</div>
+			
+			<div id="pastOrdersFooter">
+	  			<table width="100%" style="background-color: #fff">
+	  				<tr>
+	  					<td>
+	  						<p style="font-style: italic; text-align: right;">( - indicates a sale transaction)</p>
+	  					</td>
+	  				</tr>
+	    		</table>
+    		</div>
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>
