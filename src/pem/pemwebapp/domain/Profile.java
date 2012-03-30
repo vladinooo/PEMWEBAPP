@@ -1,14 +1,14 @@
 package pem.pemwebapp.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Profile implements Serializable {
@@ -21,6 +21,9 @@ public class Profile implements Serializable {
 	private String email;
 	private String password;
 	private String bodyWeight;
+	
+	@OneToMany
+	private Set<Session> sessions;
 
 	
 	public Profile() { 
@@ -34,6 +37,7 @@ public class Profile implements Serializable {
 		this.email = email;
 		this.password = password;
 		this.bodyWeight = bodyWeight;
+		sessions = new HashSet<Session>();
 	}
 	
 	public int getId() {
@@ -78,6 +82,15 @@ public class Profile implements Serializable {
 
 	public void setBodyWeight(String bodyWeight) {
 		this.bodyWeight = bodyWeight;
+	}
+	
+	
+	public void addSession(Session session) {
+		sessions.add(session);
+	}
+	
+	public Set<Session> getAllSessions() {
+		return sessions;
 	}
 	
 	

@@ -1,6 +1,7 @@
 package pem.pemwebapp.dataaccess;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,11 +17,6 @@ public class DataAccessImplementation implements DataAccess {
 	@PersistenceContext
 	private EntityManager em;
 	
-	// for test only
-	public void createProfile(Profile profile) {
-		em.persist(profile);
-	}
-	
 	public List<Profile> getProfile(Profile profile) {
 		Query q = em.createNamedQuery("getProfile");
 		List<Profile> results = q.getResultList();
@@ -32,21 +28,13 @@ public class DataAccessImplementation implements DataAccess {
 		em.remove(profileToRemove);
 	}
 	
-	// for test only
-	public void createSession(Session session) {
-		em.persist(session);
-	}
-	
-	public List<Session> listSessions() {
-		Query q = em.createNamedQuery("listSessions");
-		List<Session> results = q.getResultList();
-		return results;
-	}
-	
 	public void deleteSession(Session session) {
 		Session sessionToRemove = em.find(Session.class, session.getId());
 		em.remove(sessionToRemove);
 	}
 
+	public Set<Session> listAllSessionsOfProfile(Profile profile) {
+		return profile.getAllSessions();
+	}
 
 }

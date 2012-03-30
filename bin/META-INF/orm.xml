@@ -7,16 +7,7 @@
 	<entity class="pem.pemwebapp.domain.Profile">
 		<named-query name="getProfile">
 			<query>
-				SELECT profile FROM Profile profile
-			</query>
-		</named-query>
-	</entity>
-	
-	<entity class="pem.pemwebapp.domain.Session">
-		<named-query name="listSessions">
-			<query>
-				SELECT session FROM Session session
-				ORDER BY session.date ASC
+				SELECT profile FROM Profile profile WHERE profile.email = :email
 			</query>
 		</named-query>
 	</entity>
