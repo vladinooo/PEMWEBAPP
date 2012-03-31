@@ -76,7 +76,7 @@
     
     <login-config>
         <auth-method>FORM</auth-method>
-        <realm-name>JDBCRealm</realm-name>
+        <realm-name>JDBCRealm-PEM</realm-name>
         <form-login-config>
             <form-login-page>/faces/public/login.xhtml</form-login-page>
             <form-error-page>/faces/public/loginError.xhtml</form-error-page>

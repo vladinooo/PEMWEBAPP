@@ -8,6 +8,7 @@ import javax.faces.bean.SessionScoped;
 import pem.iphone.datamanipulation.IphoneDataManipulation;
 import pem.pemwebapp.domain.Profile;
 import pem.pemwebapp.domain.Session;
+import pem.pemwebapp.domain.Groups;
 
 
 @ManagedBean(name="profile")
@@ -23,7 +24,9 @@ public class ProfileBean {
 		
 		// call EJB business logic
 		Profile profile = new Profile("Vlad", "Hartmann", "artmannv@yahoo.co.uk", "vava", "145");
+		Groups group = new Groups("artmannv@yahoo.co.uk", "user");
 		idm._createProfile(profile);
+		idm._createGroup(group);
 		
 		Session session = new Session("28 Mar 2012 12:33", "Walk to station", "Walk", "233","400 m", "30 min", "6.3 km/h", "0");
 		Session session2 = new Session("28 Mar 2012 16:53", "Run to town", "Run", "555","1500 m", "1h", "10 km/h", "0");

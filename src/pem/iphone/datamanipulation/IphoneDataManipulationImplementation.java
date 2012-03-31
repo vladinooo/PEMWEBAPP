@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import pem.iphone.dataaccess.IphoneDataAccess;
 import pem.pemwebapp.domain.Profile;
 import pem.pemwebapp.domain.Session;
+import pem.pemwebapp.domain.Groups;
 
 @Stateless
 public class IphoneDataManipulationImplementation implements
@@ -25,6 +26,10 @@ public class IphoneDataManipulationImplementation implements
 
 	public void _deleteProfile(Profile profile) {
 		dao.deleteProfile(profile);
+	}
+	
+	public void _createGroup(Groups group) {
+		dao.createGroup(group);
 	}
 
 	public void _createSession(Profile profile, Session session) {

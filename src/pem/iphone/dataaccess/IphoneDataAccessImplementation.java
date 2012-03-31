@@ -6,6 +6,7 @@ import javax.persistence.PersistenceContext;
 
 import pem.pemwebapp.domain.Profile;
 import pem.pemwebapp.domain.Session;
+import pem.pemwebapp.domain.Groups;
 
 @Stateless
 public class IphoneDataAccessImplementation implements IphoneDataAccess {
@@ -25,6 +26,10 @@ public class IphoneDataAccessImplementation implements IphoneDataAccess {
 	public void deleteProfile(Profile profile) {
 		Profile profileToRemove = em.find(Profile.class, profile.getId());
 		em.remove(profileToRemove);
+	}
+	
+	public void createGroup(Groups group) {
+		em.persist(group);
 	}
 	
 	public void createSession(Profile profile, Session session) {
