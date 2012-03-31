@@ -1,0 +1,74 @@
+<project name="Java EE build" default="war" basedir="..">
+	
+	
+	<!-- Link to external property file -->
+	<property file="ant/build.properties"/>
+	
+	
+	<!-- Setting the classpath for all project libraries -->
+	<path id="classpath">
+        <pathelement path="${java.class.path}"/>
+        <pathelement location="${build}"/>
+        
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    	
+    	<fileset dir="${glassfish_libs}">
+    		<include name="**/javax*.jar"/>
+    		<include name="jsf-api.jar"/>
+    		<include name="security.jar"/>
+    	</fileset>
+    </path>	
+	
+	
+	<!-- Clean -->
+	<target name="clean">
+		<echo>Cleaning the ${build.dir}</echo>
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	
+	<!-- Init -->
+	<target name="init" depends="clean">
+		<echo>Creating  the deployment structure</echo>
+		<mkdir dir="${build.dir}/WEB-INF/classes"/>
+		<mkdir dir="${build.dir}/WEB-INF/lib"/>
+	</target>
+	
+	
+	<!-- Compile -->
+	<target name="compile" depends="init">
+		<echo>Compile the source files</echo>
+		<javac srcdir="${src.dir}" destdir="${build.dir}/WEB-INF/classes">
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+	
+	
+	<!-- Copy -->
+	<target name="copy" depends="compile">
+		<copy todir="${build.dir}/WEB-INF/classes/META-INF">
+			<fileset dir="${src.dir}/META-INF"/>
+		</copy>
+		<copy todir="${build.dir}/WEB-INF">
+			<fileset dir="${conf.dir}"/>
+		</copy>
+		<copy todir="${build.dir}">
+			<fileset dir="${web.content}"/>
+		</copy>
+		<copy todir="${build.dir}/WEB-INF/lib">
+			<fileset dir="${lib.dir}"/>
+		</copy>
+	</target>
+	
+	
+	<!-- War -->
+	<target name="war" depends="copy">
+		<echo>Building the deployment war file</echo>
+		<war destfile="${dist.dir}/${project.name}.war" webxml="${build.dir}/WEB-INF/web.xml">
+			<fileset dir="${build.dir}"/>
+		</war>
+	</target>
+	
+</project>

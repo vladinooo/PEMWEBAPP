@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Personal Energy Meter - Sessions</title>
+	  	
+	  	<link href="#{facesContext.externalContext.requestContextPath}/faces/public/style.css"
+	  		  rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
+		        <li><h:outputLink value="logout.xhtml">Logout</h:outputLink></li>		        
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Sessions</h3>
+	  		<br />
+			
+			<div id="tableBorder">
+	  		
+
+  	
+			</div>
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>

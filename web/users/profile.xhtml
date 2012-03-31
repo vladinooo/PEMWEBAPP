@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  
+	  <h:head>
+	  	<title>Personal Energy Meter - Online Profile</title>
+	  	
+	  	<link href="#{facesContext.externalContext.requestContextPath}/faces/public/style.css"
+	  		  rel="stylesheet" type="text/css" />
+	  	
+	  </h:head>
+	  
+	  
+	  <h:body>
+	  
+	  <center>
+	  
+	  	<h:form>
+	  		<br /><br />
+	  		
+		  	<div id="NavHorMenu">
+		       <ul>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
+		       </ul>
+		     </div>
+		     
+		     <br />
+		     
+		    <h3>Profile</h3>
+	  		<br />
+			
+			<div id="tableBorder">
+		  		<table width="100%">
+					<tr>
+						<td class="tableHead" colspan="2"><p>Personal Info:</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>First name:</p></td> <td><p>Vlad</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Last name:</p></td> <td><p>Hartmann</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Email:</p></td> <td><p>artmannv@yahoo.co.uk</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Gender:</p></td> <td><p>Male</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Age:</p></td> <td><p>30</p></td>
+					</tr>
+					<tr>
+						<td class="tableHead" width="80"><p>Body weight:</p></td> <td><p>145 lb</p></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right" class="tableFooter"><h:commandButton value="Create Profile" action="#{profile.createProfile}"/></td>
+					</tr>
+				
+				</table>
+			</div>
+	  	
+	  	</h:form>
+	  	
+	  	</center>
+	  	
+	  </h:body>
+	  
+	  
+</html>
