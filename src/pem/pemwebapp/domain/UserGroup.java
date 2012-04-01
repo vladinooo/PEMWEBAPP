@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Groups implements Serializable {
+public class UserGroup implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -16,11 +16,11 @@ public class Groups implements Serializable {
 	private String groupname;
 	
 	
-	public Groups() { 
+	public UserGroup() { 
 		// for JPA use only }
 	}
 	
-	public Groups(String email, String groupname) {
+	public UserGroup(String email, String groupname) {
 		
 		this.email = email;
 		this.groupname = groupname;

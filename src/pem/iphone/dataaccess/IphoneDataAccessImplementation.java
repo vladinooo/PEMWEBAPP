@@ -1,12 +1,14 @@
 package pem.iphone.dataaccess;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import pem.pemwebapp.domain.UserGroup;
 import pem.pemwebapp.domain.Profile;
 import pem.pemwebapp.domain.Session;
-import pem.pemwebapp.domain.Groups;
 
 @Stateless
 public class IphoneDataAccessImplementation implements IphoneDataAccess {
@@ -15,31 +17,17 @@ public class IphoneDataAccessImplementation implements IphoneDataAccess {
 	private EntityManager em;
 
 	
-	public void createProfile(Profile profile) {
-		em.persist(profile);
-	}
-	
-	public void updateProfile(Profile profile) {
+	public void createProfile(Profile profile, List<Session> sessions) {
 		
-	}
-	
-	public void deleteProfile(Profile profile) {
-		Profile profileToRemove = em.find(Profile.class, profile.getId());
-		em.remove(profileToRemove);
-	}
-	
-	public void createGroup(Groups group) {
+		UserGroup group = new UserGroup(profile.getEmail(), "USER");
 		em.persist(group);
+		em.persist(profile);
+		
+		for (Session s:sessions){
+			em.persist(s);
+			profile.addSession(s);
+		}
 	}
 	
-	public void createSession(Profile profile, Session session) {
-		em.persist(session);
-		profile.addSession(session);
-	}
 	
-	public void deleteSession(Session session) {
-		Session sessionToRemove = em.find(Session.class, session.getId());
-		em.remove(sessionToRemove);
-	}
-
 }

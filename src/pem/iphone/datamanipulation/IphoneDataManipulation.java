@@ -1,24 +1,16 @@
 package pem.iphone.datamanipulation;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import pem.pemwebapp.domain.Profile;
 import pem.pemwebapp.domain.Session;
-import pem.pemwebapp.domain.Groups;
+import pem.pemwebapp.domain.UserGroup;
 
 @Local
 public interface IphoneDataManipulation {
 	
-	public void _createProfile(Profile profile);
-	
-	public void _updateProfile(Profile profile);
-	
-	public void _deleteProfile(Profile profile);
-	
-	public void _createGroup(Groups group);
-	
-	public void _createSession(Profile profile, Session session);
-	
-	public void _deleteSession(Session session);
+	public void _createProfile(Profile profile, List<Session> sessions);
 	
 }

@@ -23,7 +23,7 @@
 		       <ul>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
-		        <li><h:outputLink value="logout.xhtml">Logout</h:outputLink></li>		        
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
 		       </ul>
 		     </div>
 		     
@@ -32,9 +32,43 @@
 		    <h3>Sessions</h3>
 	  		<br />
 			
-			<div id="tableBorder">
-	  		
+				<div id="tableBorder">
 
+		  		<h:dataTable value="#{sessions.allSessions}"
+		  		var="_session"
+		  		styleClass="dataTable"
+    			headerClass="dataTable-header"
+    			rowClasses="order-table-odd-row,dataTable-even-row"
+    			cellspacing="0"
+    			cellpadding="0"
+    			border="0">
+
+	    			<h:column>
+	    				<f:facet name="header">Date</f:facet>
+	    				#{_session.date}
+	    			</h:column>
+
+	    			<h:column>
+	    				<f:facet name="header">Session</f:facet>
+	    				#{_session.sessionName}
+	    			</h:column>
+
+	    			<h:column>
+	    				<f:facet name="header">Burned Calories</f:facet>
+	    				<p>#{_session.caloriesBurned}</p>
+	    			</h:column>
+
+	    			<h:column>
+ 						<f:facet name="header">Details</f:facet>
+	 						<h:commandButton value="Details" action="#{sessionDetails.showDetails(_session)}" />
+	    			</h:column>
+
+	    			<h:column>
+ 						<f:facet name="header">Delete</f:facet>
+	 						<h:commandButton value="Delete" action="#{sessions.__deleteSession(_session)}" />
+	    			</h:column>
+
+	    		</h:dataTable>
   	
 			</div>
 	  	

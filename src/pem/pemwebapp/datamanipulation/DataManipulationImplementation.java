@@ -1,6 +1,6 @@
 package pem.pemwebapp.datamanipulation;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -15,19 +15,19 @@ public class DataManipulationImplementation implements DataManipulation {
 	@EJB
 	private DataAccess dao;
 	
-	public void _getProfile(Profile profile) {
-		dao.getProfile(profile);	
+	public Profile _getProfile(String email) {
+		return dao.getProfile(email);	
 	}
 	
 	public void _deleteProfile(Profile profile) {
 		dao.deleteProfile(profile);
 	}
 	
-	public void _deleteSession(Session session) {
-		dao.deleteSession(session);
+	public void _deleteSession(String email, Session session) {
+		dao.deleteSession(email, session);
 	}
 	
-	public Set<Session> _listAllSessionsOfProfile(Profile profile) {
+	public List<Session> _listAllSessionsOfProfile(Profile profile) {
 		return dao.listAllSessionsOfProfile(profile);
 	}
 

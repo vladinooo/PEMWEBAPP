@@ -1,8 +1,8 @@
 package pem.pemwebapp.domain;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +23,7 @@ public class Profile implements Serializable {
 	private String bodyWeight;
 	
 	@OneToMany
-	private Set<Session> sessions;
+	private List<Session> sessions;
 
 	
 	public Profile() { 
@@ -37,7 +37,7 @@ public class Profile implements Serializable {
 		this.email = email;
 		this.password = password;
 		this.bodyWeight = bodyWeight;
-		sessions = new HashSet<Session>();
+		sessions = new ArrayList<Session>();
 	}
 	
 	public int getId() {
@@ -84,17 +84,19 @@ public class Profile implements Serializable {
 		this.bodyWeight = bodyWeight;
 	}
 	
-	
+	// add session to profile sessions collection
 	public void addSession(Session session) {
 		sessions.add(session);
 	}
 	
-	public Set<Session> getAllSessions() {
-		return sessions;
+	// remove session from profile sessions collection
+	public void removeSession(Session session) {
+		sessions.remove(session);
 	}
 	
-	
-	
+	public List<Session> getAllSessions() {
+		return sessions;
+	}
 
 
 }
