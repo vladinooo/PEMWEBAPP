@@ -4,13 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class Profile implements Serializable {
 	
 	@Id
@@ -22,7 +25,7 @@ public class Profile implements Serializable {
 	private String password;
 	private String bodyWeight;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.PERSIST)
 	private List<Session> sessions;
 
 	
@@ -93,12 +96,17 @@ public class Profile implements Serializable {
 	public void removeSession(Session session) {
 		sessions.remove(session);
 	}
-	
-	public List<Session> getAllSessions() {
+
+	public List<Session> getSessions() {
 		return sessions;
 	}
 
+	public void setSessions(List<Session> sessions) {
+		this.sessions = sessions;
+	}
 
+
+	
 }
 
 

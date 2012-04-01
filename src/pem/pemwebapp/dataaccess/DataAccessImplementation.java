@@ -19,7 +19,6 @@ public class DataAccessImplementation implements DataAccess {
 	public Profile getProfile(String email) {
 		Query q = em.createNamedQuery("getProfile");
 		q.setParameter("email", email);
-		System.out.print("This email is from DataManipulation: " + email);
 		Profile profile = (Profile) q.getSingleResult();
 		return profile;
 	}
@@ -39,7 +38,7 @@ public class DataAccessImplementation implements DataAccess {
 	}
 
 	public List<Session> listAllSessionsOfProfile(Profile profile) {
-		return profile.getAllSessions();
+		return profile.getSessions();
 	}
 
 }

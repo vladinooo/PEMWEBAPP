@@ -1,16 +1,15 @@
 package pem.iphone.datamanipulation;
 
-import java.util.List;
-
 import javax.ejb.Local;
 
+import pem.iphone.rest.TransferData;
 import pem.pemwebapp.domain.Profile;
-import pem.pemwebapp.domain.Session;
-import pem.pemwebapp.domain.UserGroup;
 
 @Local
 public interface IphoneDataManipulation {
 	
-	public void _createProfile(Profile profile, List<Session> sessions);
+	public void _createProfile(TransferData iphoneData);
+	
+	public Profile _getProfile(String email);
 	
 }

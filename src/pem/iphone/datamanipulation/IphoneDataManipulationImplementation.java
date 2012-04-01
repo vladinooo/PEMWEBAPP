@@ -1,13 +1,11 @@
 package pem.iphone.datamanipulation;
 
-import java.util.List;
-
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import pem.iphone.dataaccess.IphoneDataAccess;
+import pem.iphone.rest.TransferData;
 import pem.pemwebapp.domain.Profile;
-import pem.pemwebapp.domain.Session;
 
 @Stateless
 public class IphoneDataManipulationImplementation implements
@@ -17,8 +15,12 @@ public class IphoneDataManipulationImplementation implements
 	@EJB // dependency injection
 	private IphoneDataAccess dao;
 
-	public void _createProfile(Profile profile, List<Session> sessions) {
-		dao.createProfile(profile, sessions);
+	public void _createProfile(TransferData iphoneData) {
+		dao.createProfile(iphoneData);
 	}
 
+	public Profile _getProfile(String email) {
+		return dao.getProfile(email);
+	}
+	
 }

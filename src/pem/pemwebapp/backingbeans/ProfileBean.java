@@ -9,6 +9,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import pem.iphone.datamanipulation.IphoneDataManipulation;
+import pem.iphone.rest.TransferData;
 import pem.pemwebapp.domain.Profile;
 import pem.pemwebapp.domain.Session;
 
@@ -46,7 +47,6 @@ public class ProfileBean {
 	
 	public String createProfile() {
 		
-		// call EJB business logic
 		List<Session> sessions = new ArrayList<Session>();
 		
 		sessions.add(new Session("28 Mar 2012 12:33", "Walk to station", "Walk", "233","400 m", "30 min", "6.3 km/h", "0"));
@@ -56,8 +56,14 @@ public class ProfileBean {
 		sessions.add(new Session("31 Mar 2012 14:50", "Journey to uni", "Car", "5","3000 m", "10 min", "40 km/h", "10"));
 		
 		Profile profile = new Profile("Vlad", "Hartmann", "artmannv@yahoo.co.uk", "vava", "145");
+		
+		TransferData td2 = new TransferData();
+		td2.setProfile(profile);
+		td2.setSessions(sessions);
 
-		idm._createProfile(profile, sessions);
+		idm._createProfile(td2);
+		
+		System.out.print("Profile created from website.");
 		
 		// refresh current page
 		return null;

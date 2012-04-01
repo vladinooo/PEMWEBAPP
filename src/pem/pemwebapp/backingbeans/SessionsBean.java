@@ -37,7 +37,7 @@ public class SessionsBean {
 	}
 	
 	public void setAllSessions() {
-		allSessions = dm._getProfile(profileBean.getCurrentUser()).getAllSessions();
+		allSessions = dm._getProfile(profileBean.getCurrentUser()).getSessions();
 	}
 	
 	public void __deleteSession(Session session) {
