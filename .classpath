@@ -25,5 +25,6 @@
 	<classpathentry kind="lib" path="/Users/vladh/Documents/02_Documents/3rd_year/Final_year_project/code/PEMWEBAPP/lib/primefaces-2.2.jar"/>
 	<classpathentry kind="lib" path="lib/jersey-client-1.12.jar"/>
 	<classpathentry kind="lib" path="lib/jersey-core-1.12.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-json-1.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

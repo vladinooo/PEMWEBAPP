@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import pem.iphone.rest.TransferData;
 import pem.pemwebapp.domain.Profile;
 import pem.pemwebapp.domain.Session;
+import pem.pemwebapp.domain.SimpleProfile;
 import pem.pemwebapp.domain.UserGroup;
 
 @Stateless
@@ -19,6 +20,18 @@ public class IphoneDataAccessImplementation implements IphoneDataAccess {
 	@PersistenceContext
 	private EntityManager em;
 
+	// json test
+	public void createSimpleProfile(SimpleProfile simpleProfie) {
+		em.persist(simpleProfie);
+	}
+	
+	public SimpleProfile getSimpleProfile(String email) {
+		Query q = em.createNamedQuery("getSimpleProfile");
+		q.setParameter("email", email);
+		SimpleProfile simpleProfile = (SimpleProfile) q.getSingleResult();
+		return simpleProfile;
+	}
+	
 	
 	public void createProfile(TransferData iphoneData) {
 		
