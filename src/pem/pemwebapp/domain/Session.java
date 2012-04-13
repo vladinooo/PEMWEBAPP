@@ -1,3 +1,9 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// Session entity for storing session data. Used by JPA.
+
 package pem.pemwebapp.domain;
 
 import java.io.Serializable;

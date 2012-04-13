@@ -8,5 +8,7 @@ import pem.pemwebapp.domain.Profile;
 public interface DataManipulation {
 	
 	public Profile _getProfile(String email);
+	
+	public void _deleteProfile(String email);
 				
 }

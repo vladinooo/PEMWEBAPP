@@ -1,3 +1,10 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// ProfileResource implements the PEMWEBAPP as a RESTful service by
+// creating the Profile entity as a resource.
+
 package pem.iphone.rest;
 
 import javax.ejb.EJB;

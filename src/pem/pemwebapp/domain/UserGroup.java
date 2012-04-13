@@ -1,3 +1,9 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// UserGroup entity for storing user group data. Used by JPA.
+
 package pem.pemwebapp.domain;
 
 import java.io.Serializable;

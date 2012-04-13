@@ -1,3 +1,9 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// IphoneDataAccessImplementation accepts commands from iPhone via RESTful web service
+// and communicate with database. This is a DAO.
 
 package pem.iphone.dataaccess;
 

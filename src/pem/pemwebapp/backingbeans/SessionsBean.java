@@ -1,7 +1,10 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// SessionsBean is a backing bean for sessions.xhtml
+
 package pem.pemwebapp.backingbeans;
-
-
-
 
 import java.util.List;
 

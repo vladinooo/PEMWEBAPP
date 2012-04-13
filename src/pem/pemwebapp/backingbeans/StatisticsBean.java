@@ -1,3 +1,9 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// StatisticsBean is a backing bean for statistics.xhtml
+
 package pem.pemwebapp.backingbeans;
 
 import java.util.List;
@@ -50,7 +56,7 @@ public class StatisticsBean {
         ChartSeries calories = new ChartSeries();  
         calories.setLabel("Calories");  
         for (Session s: sessions) {
-        	calories.set(s.getDate(), Double.parseDouble(s.getCalories()));
+        	calories.set(s.getSessionName(), Double.parseDouble(s.getCalories()));
         }
         caloriesModel.addSeries(calories);  
     }  
@@ -61,7 +67,7 @@ public class StatisticsBean {
     	ChartSeries co2Emissions = new ChartSeries();  
         co2Emissions.setLabel("CO2 emissions");  
         for (Session s: sessions) {
-        	co2Emissions.set(s.getDate(), Double.parseDouble(s.getCo2Emissions()));
+        	co2Emissions.set(s.getSessionName(), Double.parseDouble(s.getCo2Emissions()));
         } 
         co2EmissionsModel.addSeries(co2Emissions);  
     }

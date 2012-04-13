@@ -1,3 +1,9 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// SessionDetailsBean is a backing bean for sessionDetails.xhtml
+
 package pem.pemwebapp.backingbeans;
 
 

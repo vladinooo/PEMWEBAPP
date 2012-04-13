@@ -1,3 +1,11 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// IphoneDataManipulationImplementation is an intermediate class which
+// delegates data to DAO. This class can implement more sophisticated
+// logic in future as application will grow thus leaving DAO simple.
+
 package pem.iphone.datamanipulation;
 
 import javax.ejb.EJB;

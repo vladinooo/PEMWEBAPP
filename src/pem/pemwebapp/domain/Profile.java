@@ -1,3 +1,9 @@
+//
+//  Created by Vladimir Hartmann
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+// Profile entity for storing profile data. Used by JPA.
+
 package pem.pemwebapp.domain;
 
 import java.io.Serializable;
@@ -105,8 +111,6 @@ public class Profile implements Serializable {
 		this.sessions = sessions;
 	}
 
-
-	
 }
 
 
