@@ -16,43 +16,40 @@ public class Session implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	private String date;
 	private String sessionName;
-	private String modeOfTransport;
-	private String caloriesBurned;
-	private String distance;
-	private String time;
-	private String speed;
-	private String cO2Emission;
+	private String date;
+	private String activity;
+	private String distanceTravelled;
+	private String totalTime;
+	private String highestSpeed;
+	private String averageGrade;
+	private String vo2;
+	private String calories;
+	private String co2Emissions;
 
 	
 	public Session() { 
 		// for JPA use only }
 	}
 	
-	public Session(String date, String sessionName, String modeOfTransport, String caloriesBurned,
-			String distance, String time, String speed, String cO2Emission) {
+	public Session(String sessionName, String date, String activity, String distanceTravelled,
+			String totalTime, String highestSpeed, String averageGrade, String vo2, String calories,
+			String co2Emissions) {
 		
-		this.date = date;
 		this.sessionName = sessionName;
-		this.modeOfTransport = modeOfTransport;
-		this.caloriesBurned = caloriesBurned;
-		this.distance = distance;
-		this.time = time;
-		this.speed = speed;
-		this.cO2Emission = cO2Emission;
+		this.date = date;
+		this.activity = activity;
+		this.distanceTravelled = distanceTravelled;
+		this.totalTime = totalTime;
+		this.highestSpeed = highestSpeed;
+		this.averageGrade = averageGrade;
+		this.vo2 = vo2;
+		this.calories = calories;
+		this.co2Emissions = co2Emissions;
 	}
 
 	public int getId() {
 		return id;
-	}
-	
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
 	}
 
 	public String getSessionName() {
@@ -63,54 +60,76 @@ public class Session implements Serializable {
 		this.sessionName = sessionName;
 	}
 
-	public String getModeOfTransport() {
-		return modeOfTransport;
+	public String getDate() {
+		return date;
 	}
 
-	public void setModeOfTransport(String modeOfTransport) {
-		this.modeOfTransport = modeOfTransport;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
-	public String getCaloriesBurned() {
-		return caloriesBurned;
+	public String getActivity() {
+		return activity;
 	}
 
-	public void setCaloriesBurned(String caloriesBurned) {
-		this.caloriesBurned = caloriesBurned;
+	public void setActivity(String activity) {
+		this.activity = activity;
 	}
 
-	public String getDistance() {
-		return distance;
+	public String getDistanceTravelled() {
+		return distanceTravelled;
 	}
 
-	public void setDistance(String distance) {
-		this.distance = distance;
+	public void setDistanceTravelled(String distanceTravelled) {
+		this.distanceTravelled = distanceTravelled;
 	}
 
-	public String getTime() {
-		return time;
+	public String getTotalTime() {
+		return totalTime;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setTotalTime(String totalTime) {
+		this.totalTime = totalTime;
 	}
 
-	public String getSpeed() {
-		return speed;
+	public String getHighestSpeed() {
+		return highestSpeed;
 	}
 
-	public void setSpeed(String speed) {
-		this.speed = speed;
+	public void setHighestSpeed(String highestSpeed) {
+		this.highestSpeed = highestSpeed;
 	}
 
-	public String getcO2Emission() {
-		return cO2Emission;
+	public String getAverageGrade() {
+		return averageGrade;
 	}
 
-	public void setcO2Emission(String cO2Emission) {
-		this.cO2Emission = cO2Emission;
+	public void setAverageGrade(String averageGrade) {
+		this.averageGrade = averageGrade;
 	}
-	
-	
+
+	public String getVo2() {
+		return vo2;
+	}
+
+	public void setVo2(String vo2) {
+		this.vo2 = vo2;
+	}
+
+	public String getCalories() {
+		return calories;
+	}
+
+	public void setCalories(String calories) {
+		this.calories = calories;
+	}
+
+	public String getCo2Emissions() {
+		return co2Emissions;
+	}
+
+	public void setCo2Emissions(String co2Emissions) {
+		this.co2Emissions = co2Emissions;
+	}
 
 }

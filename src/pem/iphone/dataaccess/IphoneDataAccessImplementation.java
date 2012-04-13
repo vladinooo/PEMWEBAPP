@@ -1,17 +1,13 @@
 
 package pem.iphone.dataaccess;
 
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import pem.iphone.rest.TransferData;
 import pem.pemwebapp.domain.Profile;
-import pem.pemwebapp.domain.Session;
-import pem.pemwebapp.domain.SimpleProfile;
 import pem.pemwebapp.domain.UserGroup;
 
 @Stateless
@@ -20,39 +16,36 @@ public class IphoneDataAccessImplementation implements IphoneDataAccess {
 	@PersistenceContext
 	private EntityManager em;
 
-	// json test
-	public void createSimpleProfile(SimpleProfile simpleProfie) {
-		em.persist(simpleProfie);
+	
+	public Profile getProfile(String email) throws javax.persistence.NoResultException {
+		try {
+			Query q = em.createNamedQuery("getProfile");
+			q.setParameter("email", email);
+			Profile profile = (Profile) q.getSingleResult();
+			return profile;
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 	
-	public SimpleProfile getSimpleProfile(String email) {
-		Query q = em.createNamedQuery("getSimpleProfile");
-		q.setParameter("email", email);
-		SimpleProfile simpleProfile = (SimpleProfile) q.getSingleResult();
-		return simpleProfile;
-	}
 	
-	
-	public void createProfile(TransferData iphoneData) {
-		
-		Profile profile = iphoneData.getProfile();
-		List<Session> sessions = iphoneData.getSessions();
-
+	public void createProfile(Profile profile) {
 		UserGroup group = new UserGroup(profile.getEmail(), "USER");
 		em.persist(group);
 		em.persist(profile);
-
-		for (Session s : sessions) {
-			profile.addSession(s);
-		}
-				
 	}
 	
-	public Profile getProfile(String email) {
-		Query q = em.createNamedQuery("getProfile");
-		q.setParameter("email", email);
-		Profile profile = (Profile) q.getSingleResult();
-		return profile;
-	}
+	public String deleteProfile(String email) throws javax.persistence.NoResultException {
+		try {
+			Query q = em.createNamedQuery("getProfile");
+			q.setParameter("email", email);
+			Profile profileToDelete = (Profile) q.getSingleResult();
+			em.remove(profileToDelete);
+			return "1";
+		} catch (NoResultException e) {
+			System.out.print("Profile doesn't exist!");
+			return "0";
+		}
+	}	
 	
 }

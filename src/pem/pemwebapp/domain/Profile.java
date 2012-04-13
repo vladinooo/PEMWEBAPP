@@ -25,7 +25,7 @@ public class Profile implements Serializable {
 	private String password;
 	private String bodyWeight;
 	
-	@OneToMany(cascade=CascadeType.PERSIST)
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<Session> sessions;
 
 	

@@ -23,13 +23,21 @@
 		       <ul>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/statistics.xhtml" >Statistics</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
 		       </ul>
 		     </div>
 		     
 		     <br />
 		     
-		    <h3>Profile</h3>
+		     <table width="600" style="background-color: #fff">
+					<tr>
+						<td width="90" align="center"><img src="#{facesContext.externalContext.requestContextPath}/faces/public/images/pemLogo.jpg" /></td>
+						<td align="center"><p style="font-size: 20px">Profile</p></td>
+						<td width="90"> </td>
+					</tr>
+			</table>
+			
 	  		<br />
 			
 			<div id="tableBorder">
@@ -38,25 +46,20 @@
 						<td class="tableHead" colspan="2"><p>Personal Info:</p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="80"><p>First name:</p></td> <td><p>Vlad</p></td>
+						<td class="tableCell" width="80"><p>First name:</p></td>
+						<td><p><h:outputText value="#{profileBean.profile.firstName}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="80"><p>Last name:</p></td> <td><p>Hartmann</p></td>
+						<td class="tableCell" width="80"><p>Last name:</p></td>
+						<td><p><h:outputText value="#{profileBean.profile.lastName}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="80"><p>Email:</p></td> <td><p>artmannv@yahoo.co.uk</p></td>
+						<td class="tableCell" width="80"><p>Email:</p></td>
+						<td><p><h:outputText value="#{profileBean.profile.email}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="80"><p>Gender:</p></td> <td><p>Male</p></td>
-					</tr>
-					<tr>
-						<td class="tableHead" width="80"><p>Age:</p></td> <td><p>30</p></td>
-					</tr>
-					<tr>
-						<td class="tableHead" width="80"><p>Body weight:</p></td> <td><p>145 lb</p></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="right" class="tableFooter"><h:commandButton value="Create Profile" action="#{profile.createProfile}"/></td>
+						<td class="tableCell" width="80"><p>Body weight:</p></td>
+						<td><p><h:outputText value="#{profileBean.profile.bodyWeight}"/></p></td>
 					</tr>
 				
 				</table>

@@ -1,10 +1,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
 	  
 	  <h:head>
-	  	<title>Personal Energy Meter - Sessions</title>
+	  	<title>Personal Energy Meter - Statistics</title>
 	  	
 	  	<link href="#{facesContext.externalContext.requestContextPath}/faces/public/style.css"
 	  		  rel="stylesheet" type="text/css" />
@@ -30,50 +31,35 @@
 		     
 		     <br />
 		     
-		    <table width="600" style="background-color: #fff">
+		     <table width="600" style="background-color: #fff">
 					<tr>
 						<td width="90" align="center"><img src="#{facesContext.externalContext.requestContextPath}/faces/public/images/pemLogo.jpg" /></td>
-						<td align="center"><p style="font-size: 20px">Sessions</p></td>
+						<td align="center"><p style="font-size: 20px">Statistics</p></td>
 						<td width="90"> </td>
 					</tr>
 			</table>
 			
 	  		<br />
 			
-				<div id="tableBorder">
+			<div id="tableBorder">
+		  		<table width="100%">
+					<tr>
+						<td>
+						
+						<f:metadata>
+							<f:event type="preRenderView" listener="#{statisticsBean.preRender()}"/>
+						</f:metadata>
 
-		  		<h:dataTable value="#{sessionsBean.allSessions}"
-		  		var="_session"
-		  		styleClass="dataTable"
-    			headerClass="dataTable-header"
-    			rowClasses="order-table-odd-row,dataTable-even-row"
-    			cellspacing="0"
-    			cellpadding="0"
-    			border="0">
-
-	    			<h:column>
-	    				<f:facet name="header">Session name</f:facet>
-	    				#{_session.sessionName}
-	    			</h:column>
-
-	    			<h:column>
-	    				<f:facet name="header">Date</f:facet>
-	    				#{_session.date}
-	    			</h:column>
-
-	    			<h:column>
-	    				<f:facet name="header">Activity</f:facet>
-	    				<p>#{_session.activity}</p>
-	    			</h:column>
-
-	    			<h:column>
- 						<f:facet name="header">Details</f:facet>
-	 						<h:commandButton value="Details" action="#{sessionDetailsBean.showDetails(_session)}" />
-	    			</h:column>
-
-
-	    		</h:dataTable>
-  	
+						<p:lineChart id="calories" value="#{statisticsBean.caloriesModel}" legendPosition="ne"
+		  				seriesColors="dfb021" minY="0" maxY="2500" style="height:150px;margin-top:20px"/>
+		  				
+		  				<p:lineChart id="co2Emissions" value="#{statisticsBean.co2EmissionsModel}" legendPosition="ne"
+		  				seriesColors="91adc1" minY="0" maxY="200" style="height:150px;margin-top:20px"/>
+		  				
+						</td>
+					</tr>
+				
+				</table>
 			</div>
 	  	
 	  	</h:form>

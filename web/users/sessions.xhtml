@@ -23,18 +23,26 @@
 		       <ul>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/statistics.xhtml" >Statistics</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
 		       </ul>
 		     </div>
 		     
 		     <br />
 		     
-		    <h3>Sessions</h3>
+		    <table width="600" style="background-color: #fff">
+					<tr>
+						<td width="90" align="center"><img src="#{facesContext.externalContext.requestContextPath}/faces/public/images/pemLogo.jpg" /></td>
+						<td align="center"><p style="font-size: 20px">Sessions</p></td>
+						<td width="90"> </td>
+					</tr>
+			</table>
+			
 	  		<br />
 			
 				<div id="tableBorder">
 
-		  		<h:dataTable value="#{sessions.allSessions}"
+		  		<h:dataTable value="#{sessionsBean.allSessions}"
 		  		var="_session"
 		  		styleClass="dataTable"
     			headerClass="dataTable-header"
@@ -44,29 +52,25 @@
     			border="0">
 
 	    			<h:column>
+	    				<f:facet name="header">Session name</f:facet>
+	    				#{_session.sessionName}
+	    			</h:column>
+
+	    			<h:column>
 	    				<f:facet name="header">Date</f:facet>
 	    				#{_session.date}
 	    			</h:column>
 
 	    			<h:column>
-	    				<f:facet name="header">Session</f:facet>
-	    				#{_session.sessionName}
-	    			</h:column>
-
-	    			<h:column>
-	    				<f:facet name="header">Burned Calories</f:facet>
-	    				<p>#{_session.caloriesBurned}</p>
+	    				<f:facet name="header">Activity</f:facet>
+	    				<p>#{_session.activity}</p>
 	    			</h:column>
 
 	    			<h:column>
  						<f:facet name="header">Details</f:facet>
-	 						<h:commandButton value="Details" action="#{sessionDetails.showDetails(_session)}" />
+	 						<h:commandButton value="Details" action="#{sessionDetailsBean.showDetails(_session)}" />
 	    			</h:column>
 
-	    			<h:column>
- 						<f:facet name="header">Delete</f:facet>
-	 						<h:commandButton value="Delete" action="#{sessions.__deleteSession(_session)}" />
-	    			</h:column>
 
 	    		</h:dataTable>
   	

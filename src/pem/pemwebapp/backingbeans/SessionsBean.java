@@ -14,7 +14,7 @@ import pem.pemwebapp.datamanipulation.DataManipulation;
 import pem.pemwebapp.domain.Session;
 
 
-@ManagedBean(name="sessions")
+@ManagedBean(name="sessionsBean")
 @SessionScoped
 public class SessionsBean {
 	
@@ -23,12 +23,11 @@ public class SessionsBean {
 	@EJB
 	private DataManipulation dm;
 	
-	@ManagedProperty(value="#{profile}")
+	@ManagedProperty(value="#{profileBean}") // name of real bean to be injected to tempProfileBean
+	private ProfileBean tempProfileBean;
 	
-	private ProfileBean profileBean;
-	
-	public void setProfileBean(ProfileBean profileBean) {
-		this.profileBean = profileBean;
+	public void setTempProfileBean(ProfileBean profileBean) {
+		tempProfileBean = profileBean;
 	}
 	
 	public List<Session> getAllSessions() {
@@ -37,12 +36,9 @@ public class SessionsBean {
 	}
 	
 	public void setAllSessions() {
-		allSessions = dm._getProfile(profileBean.getCurrentUser()).getSessions();
+		allSessions = dm._getProfile(tempProfileBean.getCurrentUser()).getSessions();
 	}
 	
-	public void __deleteSession(Session session) {
-		dm._deleteSession(profileBean.getCurrentUser(), session);
-	}
 	 
 }
 

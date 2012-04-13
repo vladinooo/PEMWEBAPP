@@ -23,48 +23,64 @@
 		       <ul>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
+		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/statistics.xhtml" >Statistics</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
 		       </ul>
 		     </div>
 		     
 		     <br />
 		     
-		    <h3>Session Details</h3>
+		    <table width="600" style="background-color: #fff">
+					<tr>
+						<td width="90" align="center"><img src="#{facesContext.externalContext.requestContextPath}/faces/public/images/pemLogo.jpg" /></td>
+						<td align="center"><p style="font-size: 20px">Session details</p></td>
+						<td width="90"> </td>
+					</tr>
+			</table>
+			
 	  		<br />
 			
 			<div id="tableBorder">
 		  		<table width="100%">
 					<tr>
-						<td class="tableHead" width="110"><p>Date:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.date}"/></p></td>
+						<td class="tableCell" width="110"><p>Session name:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.sessionName}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="110"><p>Session name:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.sessionName}"/></p></td>
+						<td class="tableCell" width="110"><p>Date:</p></td>
+						<td><p><h:outputText value="#{ssessionDetailsBean.session.date}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="110"><p>Mode of transport:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.modeOfTransport}"/></p></td>
+						<td class="tableCell" width="110"><p>Activity:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.activity}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="110"><p>Burned Calories:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.caloriesBurned}"/></p></td>
+						<td class="tableCell" width="110"><p>Distance traveled:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.distanceTravelled}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="110"><p>Distance:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.distance}"/></p></td>
+						<td class="tableCell" width="110"><p>Total time:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.totalTime}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="110"><p>Time:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.time}"/></p></td>
+						<td class="tableCell" width="110"><p>Highest speed:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.highestSpeed}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="110"><p>Speed:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.speed}"/></p></td>
+						<td class="tableCell" width="110"><p>Average grade:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.averageGrade}"/></p></td>
 					</tr>
 					<tr>
-						<td class="tableHead" width="110"><p>Co2 Emission:</p></td>
-						<td><p><h:outputText value="#{sessionDetails.session.cO2Emission}"/></p></td>
+						<td class="tableCell" width="110"><p>VO2:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.vo2}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableCell" width="110"><p>Calories:</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.calories}"/></p></td>
+					</tr>
+					<tr>
+						<td class="tableCell" width="110"><p>CO2 emissions</p></td>
+						<td><p><h:outputText value="#{sessionDetailsBean.session.co2Emissions}"/></p></td>
 					</tr>
 				
 				</table>

@@ -7,7 +7,7 @@ import pem.pemwebapp.domain.Session;
 
 
 
-@ManagedBean(name="sessionDetails")
+@ManagedBean(name="sessionDetailsBean")
 @SessionScoped
 public class SessionDetailsBean {
 	

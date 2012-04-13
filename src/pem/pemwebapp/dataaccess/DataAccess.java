@@ -11,12 +11,5 @@ import pem.pemwebapp.domain.Session;
 public interface DataAccess {
 	
 	public Profile getProfile(String email);
-	
-	public void deleteProfile(Profile profile);
-	
-	public void deleteSession(String email, Session session);
-	
-	public List<Session> listAllSessionsOfProfile(Profile profile);
-
 
 }

@@ -3,17 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	version="2.1">
 	
-	<!--  JSON test -->
-	<entity class="pem.pemwebapp.domain.SimpleProfile">
-		<named-query name="getSimpleProfile">
-			<query>
-				SELECT simpleProfile FROM SimpleProfile simpleProfile WHERE simpleProfile.email = :email
-			</query>
-		</named-query>
-	</entity>
-	
-	
-
 	<entity class="pem.pemwebapp.domain.Profile">
 		<named-query name="getProfile">
 			<query>

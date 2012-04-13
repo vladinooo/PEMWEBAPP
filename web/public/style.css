@@ -6,27 +6,35 @@ body {
 	}
 	
 table {
-	background-color:#d5e4ef;
+	background-color:#bcd1e0;
 	padding: 0;
 	margin: 0;
 	}
 
 #tableBorder {
 	width: 600px;
-	border: 2px solid #bdd5e6;
+	border: 1px solid #91adc1;
+}
+
+#chartBorder {
+	width: 600px;
 }
 
 #loginTableBorder {
 	width: 400px;
-	border: 2px solid #bdd5e6;
+	border: 1px solid #91adc1;
 }
 
 .tableHead {
-	background-color:#bdd5e6;
+	background-color:#9ebacd;
+}
+
+.tableCell {
+	background-color: #afc5d5;
 }
 
 .tableFooter {
-	background-color:#bdd5e6;
+	background-color:#9ebacd;
 	height: 50px;
 }
 
@@ -42,19 +50,19 @@ p {
 }
 
 #tableBorder .navigation {
-	background-color: #bdd5e6;
+	background-color: #91adc1;
 	font-size: 12px;
 	padding: 2px;
 	text-align: center;
 }
 
 #NavHorMenu {
-	background-color: #bdd5e6;
-	height: 20px;
+	background-color: #bcd1e0;
+	height: 25px;
 	width: 600px;
+	padding-top: 5px;
 	text-align: center;
-	border: 2px solid #bdd5e6;
-
+	border: 1px solid #91adc1;
 }
 
 #NavHorMenu ul {
@@ -70,10 +78,10 @@ p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	text-indent: -1000em;
-	margin-left: 45px;
-	margin-right: 45px;
-	padding-left: 35px;
-	padding-right: 35px;
+	margin-left: 33px;
+	margin-right: 33px;
+	padding-left: 20px;
+	padding-right: 20px;
 	text-decoration: none;
 	color: #000;
 	}
@@ -82,10 +90,10 @@ p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	text-indent: -1000em;
-	margin-left: 45px;
-	margin-right: 45px;
-	padding-left: 35px;
-	padding-right: 35px;
+	margin-left: 33px;
+	margin-right: 33px;
+	padding-left: 20px;
+	padding-right: 20px;
 	text-decoration: underline;
 	color: #000;
 	}
@@ -100,12 +108,12 @@ p {
 	width: 100%;
 	text-align: left;
 	font-size: 12px;
-	background-color:#d5e4ef;
+	background-color:#bcd1e0;
 }
 
 .dataTable-header {
 	text-align: left;
-	background:none repeat scroll 0 0 #bdd5e6;
+	background:none repeat scroll 0 0 #9ebacd;
 	border-bottom:1px solid #000;
 	padding:10px;
 }
@@ -119,5 +127,5 @@ p {
 .dataTable-even-row {
 	text-align: left;
 	padding: 10px 2px 10px 2px;
-	background:none repeat scroll 0 0 #bdd5e6;
+	background:none repeat scroll 0 0 #afc5d5;
 }
