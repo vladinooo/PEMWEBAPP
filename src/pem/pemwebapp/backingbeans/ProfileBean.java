@@ -7,16 +7,18 @@
 	package pem.pemwebapp.backingbeans;
 	
 	import java.io.IOException;
-	
-	import javax.ejb.EJB;
-	import javax.faces.application.FacesMessage;
-	import javax.faces.bean.ManagedBean;
-	import javax.faces.bean.SessionScoped;
-	import javax.faces.context.FacesContext;
-	import javax.faces.event.ActionEvent;
-	
-	import pem.pemwebapp.datamanipulation.DataManipulation;
-	import pem.pemwebapp.domain.Profile;
+
+import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import pem.pemwebapp.datamanipulation.DataManipulation;
+import pem.pemwebapp.domain.Profile;
 	
 	@ManagedBean(name="profileBean")
 	@SessionScoped
@@ -58,5 +60,14 @@
         FacesContext.getCurrentInstance().getExternalContext()
 		.redirect("http://vladinooo.info:9090/pemwebapp/faces/public/login.xhtml");
     }  
+	
+	public void logout() throws IOException {
+		FacesContext fCtx = FacesContext.getCurrentInstance();
+	    HttpSession session = (HttpSession) fCtx.getExternalContext().getSession(false);
+	    session.invalidate();
+	    
+	    FacesContext.getCurrentInstance().getExternalContext()
+		.redirect("http://vladinooo.info:9090/pemwebapp/faces/public/login.xhtml");
+	}
 }
 

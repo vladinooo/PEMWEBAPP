@@ -26,7 +26,8 @@
 			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
 			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
 			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/statistics.xhtml" >Statistics</a></li>
-			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
+			        <li><a href="#" onclick="logoutConfirmation.show();return false;">Logout</a></li>	
+			        	        
 			       </ul>
 			     </div>
 			     
@@ -77,6 +78,18 @@
 						        <p:commandButton id="decline" value="No" onclick="confirmation.hide()" type="button" />   
 						                  
 						    	</p:confirmDialog>
+						    	
+						    	
+						    	<p:confirmDialog id="logoutDialog" message="Are you sure?"
+						      	header="Logout" severity="alert" widgetVar="logoutConfirmation">  
+						                  
+						        <p:commandButton id="confirm2" value="Yes" update="messages" oncomplete="logoutConfirmation.hide()"  
+						                    actionListener="#{profileBean.logout}" />  
+						        <p:commandButton id="decline2" value="No" onclick="logoutConfirmation.hide()" type="button" />   
+						                  
+						    	</p:confirmDialog>
+						    	
+						    	
 							</td>
 						</tr>
 					</table>

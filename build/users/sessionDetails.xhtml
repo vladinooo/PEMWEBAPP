@@ -1,7 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
 	  
 	  <h:head>
 	  	<title>Personal Energy Meter - Session Details</title>
@@ -24,7 +25,7 @@
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
 		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/statistics.xhtml" >Statistics</a></li>
-		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
+		        <li><a href="#" onclick="logoutConfirmation.show();return false;">Logout</a></li>	        
 		       </ul>
 		     </div>
 		     
@@ -38,7 +39,19 @@
 					</tr>
 			</table>
 			
+			<p:growl id="messages" /> 
+	  		<p:confirmDialog id="logoutDialog" message="Are you sure?"
+		      	header="Logout" severity="alert" widgetVar="logoutConfirmation">  
+		                  
+		        <p:commandButton id="confirm2" value="Yes" update="messages" oncomplete="logoutConfirmation.hide()"  
+		                    actionListener="#{profileBean.logout}" />  
+		        <p:commandButton id="decline2" value="No" onclick="logoutConfirmation.hide()" type="button" />   
+		                  
+		    	</p:confirmDialog>
+	  		
+	  		
 	  		<br />
+	  			  		
 			
 			<div id="tableBorder">
 		  		<table width="100%">

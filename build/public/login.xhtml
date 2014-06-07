@@ -9,7 +9,8 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 	  <h:head>
 	  	<title>Personal Energy Meter - Web Interface</title>
 	  	
-	  	<link href="style.css" rel="stylesheet" type="text/css" />
+	  	<link href="#{facesContext.externalContext.requestContextPath}/faces/public/style.css"
+		  		  rel="stylesheet" type="text/css" />
 	  	
 	  </h:head>
 	  
@@ -19,7 +20,7 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 	   
 	  		<br /><br /><br /><br />
 		     
-		    <img src="images/pemLogo.jpg" />
+		    <img src="#{facesContext.externalContext.requestContextPath}/faces/public/images/pemLogo.jpg" />
 	  		<br /><br />
 			
 			
