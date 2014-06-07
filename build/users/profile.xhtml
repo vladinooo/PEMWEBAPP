@@ -1,91 +1,92 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:p="http://primefaces.org/ui">
-	  
-	  <h:head>
-	  	<title>Personal Energy Meter - Online Profile</title>
-	  	
-	  	<link href="#{facesContext.externalContext.requestContextPath}/faces/public/style.css"
-	  		  rel="stylesheet" type="text/css" />
-	  	
-	  </h:head>
-	  
-	  
-	  <h:body>
-	  
-	  <center>
-	  
-	  	<h:form prependId="false">
-	  		<br /><br />
-	  		
-		  	<div id="NavHorMenu">
-		       <ul>
-		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
-		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
-		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/statistics.xhtml" >Statistics</a></li>
-		        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
-		       </ul>
-		     </div>
-		     
-		     <br />
-		     
-		     <table width="600" style="background-color: #fff">
-					<tr>
-						<td width="90" align="center"><img src="#{facesContext.externalContext.requestContextPath}/faces/public/images/pemLogo.jpg" /></td>
-						<td align="center"><p style="font-size: 20px">Profile</p></td>
-						<td width="90"> </td>
-					</tr>
-			</table>
-			
-	  		<br />
-			
-			<div id="tableBorder">
-		  		<table width="100%">
-					<tr>
-						<td class="tableHead" colspan="2"><p>Personal Info:</p></td>
-					</tr>
-					<tr>
-						<td class="tableCell" width="80"><p>First name:</p></td>
-						<td><p><h:outputText value="#{profileBean.profile.firstName}"/></p></td>
-					</tr>
-					<tr>
-						<td class="tableCell" width="80"><p>Last name:</p></td>
-						<td><p><h:outputText value="#{profileBean.profile.lastName}"/></p></td>
-					</tr>
-					<tr>
-						<td class="tableCell" width="80"><p>Email:</p></td>
-						<td><p><h:outputText value="#{profileBean.profile.email}"/></p></td>
-					</tr>
-					<tr>
-						<td class="tableCell" width="80"><p>Body weight:</p></td>
-						<td><p><h:outputText value="#{profileBean.profile.bodyWeight}"/></p></td>
-					</tr>
-					<tr>
-						<td colspan="2" align="right" class="tableFooter">
-							<p:growl id="messages" />  
-					          
-					        <p:commandButton id="showDialogButton" value="Delete Profile" onclick="confirmation.show()" type="button"/>
-					      	
-					      	<p:confirmDialog id="confirmDialog" message="This action will delete profile and all sessions! Are you sure?"
-					      	header="Delete Profile?" severity="alert" widgetVar="confirmation">  
-					                  
-					        <p:commandButton id="confirm" value="Yes" update="messages" oncomplete="confirmation.hide()"  
-					                    actionListener="#{profileBean.deleteProfile}" />  
-					        <p:commandButton id="decline" value="No" onclick="confirmation.hide()" type="button" />   
-					                  
-					    	</p:confirmDialog>
-						</td>
-					</tr>
+	
+	<html xmlns="http://www.w3.org/1999/xhtml"
+		  xmlns:h="http://java.sun.com/jsf/html"
+		  xmlns:f="http://java.sun.com/jsf/core"
+		  xmlns:ui="http://java.sun.com/jsf/facelets"
+		  xmlns:p="http://primefaces.org/ui">
+		  
+		  <h:head>
+		  	<title>Personal Energy Meter - Online Profile</title>
+		  	
+		  	<link href="#{facesContext.externalContext.requestContextPath}/faces/public/style.css"
+		  		  rel="stylesheet" type="text/css" />
+		  	
+		  </h:head>
+		  
+		  
+		  <h:body>
+		  
+		  <center>
+		  
+		  	<h:form prependId="false">
+		  		<br /><br />
+		  		
+			  	<div id="NavHorMenu">
+			       <ul>
+			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/profile.xhtml" >Profile</a></li>
+			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/sessions.xhtml" >Sessions</a></li>
+			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/users/statistics.xhtml" >Statistics</a></li>
+			        <li><a href="#{facesContext.externalContext.requestContextPath}/faces/public/login.xhtml" >Logout</a></li>		        
+			       </ul>
+			     </div>
+			     
+			     <br />
+			     
+			     <table width="600" style="background-color: #fff">
+						<tr>
+							<td width="90" align="center"><img src="#{facesContext.externalContext.requestContextPath}/faces/public/images/pemLogo.jpg" /></td>
+							<td align="center"><p style="font-size: 20px">Profile</p></td>
+							<td width="90"> </td>
+						</tr>
 				</table>
-			</div>
-      
-	  	</h:form>
-	  	
-	  	</center>
-	  	
-	  </h:body>
-	  
-	  
-</html>
+				
+		  		<br />
+				
+				<div id="tableBorder">
+			  		<table width="100%">
+						<tr>
+							<td class="tableHead" colspan="2"><p>Personal Info:</p></td>
+						</tr>
+						<tr>
+							<td class="tableCell" width="80"><p>First name:</p></td>
+							<td><p><h:outputText value="#{profileBean.profile.firstName}"/></p></td>
+						</tr>
+						<tr>
+							<td class="tableCell" width="80"><p>Last name:</p></td>
+							<td><p><h:outputText value="#{profileBean.profile.lastName}"/></p></td>
+						</tr>
+						<tr>
+							<td class="tableCell" width="80"><p>Email:</p></td>
+							<td><p><h:outputText value="#{profileBean.profile.email}"/></p></td>
+						</tr>
+						<tr>
+							<td class="tableCell" width="80"><p>Body weight:</p></td>
+							<td><p><h:outputText value="#{profileBean.profile.bodyWeight}"/></p></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="right" class="tableFooter">
+								<p:growl id="messages" />  
+						          
+						        <p:commandButton id="showDialogButton" value="Delete Profile" onclick="confirmation.show()" type="button"/>
+						      	
+						      	<p:confirmDialog id="confirmDialog" message="This action will delete profile and all sessions! Are you sure?"
+						      	header="Delete Profile?" severity="alert" widgetVar="confirmation">  
+						                  
+						        <p:commandButton id="confirm" value="Yes" update="messages" oncomplete="confirmation.hide()"  
+						                    actionListener="#{profileBean.deleteProfile}" />  
+						        <p:commandButton id="decline" value="No" onclick="confirmation.hide()" type="button" />   
+						                  
+						    	</p:confirmDialog>
+							</td>
+						</tr>
+					</table>
+				</div>
+	      
+		  	</h:form>
+		  	
+		  	</center>
+		  	
+		  </h:body>
+		  
+		  
+	</html>

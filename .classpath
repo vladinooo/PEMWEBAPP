@@ -21,10 +21,11 @@
 	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.servlet.jsp.jstl.jar"/>
 	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/modules/javax.transaction.jar"/>
 	<classpathentry kind="lib" path="/Users/vladh/glassfish3/glassfish/lib/gf-client.jar"/>
-	<classpathentry kind="lib" path="/Users/vladh/Documents/02_Documents/3rd_year/Final_year_project/code/PEMWEBAPP/lib/mysql-connector-java-5.1.18-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/vladh/Documents/00_work/PEMWEBAPP/lib/mysql-connector-java-5.1.18-bin.jar"/>
 	<classpathentry kind="lib" path="lib/jersey-client-1.12.jar"/>
 	<classpathentry kind="lib" path="lib/jersey-core-1.12.jar"/>
 	<classpathentry kind="lib" path="lib/jersey-json-1.12.jar"/>
 	<classpathentry kind="lib" path="lib/primefaces-3.2.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.18-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -4,50 +4,50 @@
 //
 // Profile entity for storing profile data. Used by JPA.
 
-package pem.pemwebapp.domain;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@Entity
-@XmlRootElement
-public class Profile implements Serializable {
+	package pem.pemwebapp.domain;
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String password;
-	private String bodyWeight;
+	import java.io.Serializable;
+	import java.util.ArrayList;
+	import java.util.List;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	private List<Session> sessions;
-
+	import javax.persistence.CascadeType;
+	import javax.persistence.Entity;
+	import javax.persistence.GeneratedValue;
+	import javax.persistence.GenerationType;
+	import javax.persistence.Id;
+	import javax.persistence.OneToMany;
+	import javax.xml.bind.annotation.XmlRootElement;
 	
-	public Profile() { 
-		// for JPA use only }
-	}
-	
-	public Profile(String firstName, String lastName, String email, String password, String bodyWeight) {
+	@Entity
+	@XmlRootElement
+	public class Profile implements Serializable {
 		
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.password = password;
-		this.bodyWeight = bodyWeight;
-		sessions = new ArrayList<Session>();
-	}
+		@Id
+		@GeneratedValue(strategy=GenerationType.AUTO)
+		private int id;
+		private String firstName;
+		private String lastName;
+		private String email;
+		private String password;
+		private String bodyWeight;
+		
+		@OneToMany(cascade=CascadeType.ALL)
+		private List<Session> sessions;
+	
+		
+		public Profile() { 
+			// for JPA use only }
+		}
+		
+		public Profile(String firstName, String lastName, String email, String password, String bodyWeight) {
+			
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.email = email;
+			this.password = password;
+			this.bodyWeight = bodyWeight;
+			sessions = new ArrayList<Session>();
+		}
 	
 	public int getId() {
 		return id;
